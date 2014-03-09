@@ -1,0 +1,19 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+	sharedrepository = 0666
+[receive]
+	denyNonFastforwards = true
+[remote "bitbucket"]
+	url = git@bitbucket.org:sergeifilippov/vagrant-statamic.git
+	fetch = +refs/heads/*:refs/remotes/bitbucket/*
+[remote "github"]
+	url = git@github.com:haikulab/vagrant-statamic.git
+	fetch = +refs/heads/*:refs/remotes/github/*
+[remote "test"]
+	url = git@github.com:haikulab/test.git
+	fetch = +refs/heads/*:refs/remotes/test/*

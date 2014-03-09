@@ -1,0 +1,36 @@
+---
+- name: Install Apache
+  sudo: yes
+  apt: pkg=apache2 state=latest
+
+- name: Disable Default Apache sites
+  shell: a2dissite {{ item }}
+  notify: restart apache
+  with_items:
+    - 000-default.conf
+    - default-ssl.conf
+
+- name: Change default apache site
+  sudo: yes
+  template: src=vhosts.conf.tpl dest=/etc/apache2/sites-available/statamic.conf
+  notify: restart apache
+
+- name: Enable Custom Default Sites
+  shell: a2ensite {{ item }}
+  notify: restart apache
+  with_items:
+    - statamic.conf
+
+- name: Get rid of /var/www/html folder
+  sudo: yes
+  command: removes=/var/www/html
+
+- name: Install Apache Modules
+  shell: a2enmod {{ item }}
+  notify: restart apache
+  with_items:
+    - rewrite
+    - vhost_alias
+    - headers
+    - expires
+    - filter
