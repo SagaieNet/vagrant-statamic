@@ -23,7 +23,7 @@
 
 - name: Get rid of /var/www/html folder
   sudo: yes
-  command: removes=/var/www/html
+  shell: rm -fR /var/www/html
 
 - name: Install Apache Modules
   shell: a2enmod {{ item }}
