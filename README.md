@@ -4,6 +4,11 @@
 
 A happy union of [Vagrant](http://www.vagrantup.com/) and [Statamic CMS](http://www.statamic.com) to allow you to develop your sites in peace without worrying about the next system update breaking something.
 
+## Works on
+
++ ![Vagrant 1.5.0](http://b.repl.ca/v1/Vagrant-1.5.0-green.png)
++ ![Statamic 1.7.3](http://b.repl.ca/v1/Statamic-1.7.3-green.png)
+
 ## Requirements
 
 Currently working and tested on OSX only but should work just fine on Linux/BSD system and even Windows.
