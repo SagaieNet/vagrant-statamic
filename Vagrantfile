@@ -43,20 +43,23 @@ Vagrant.configure("2") do |config|
 
     # Source Code folder mounting
     ## NFS based folder mounting is OSX and Linux only!!!!
-    web.vm.synced_folder "./source", "/var/www", id: "vagrant-root", :nfs => true
+    # web.vm.synced_folder "./source", "/var/www", id: "vagrant-root", :nfs => true
 
-    # Windows Users use this synced_folder method instead
+    ## Rsync based folder mounting
+    web.vm.synced_folder "./source", "/var/www/", type: "rsync", rsync__exclude: [".git/" , "node_modules", ".sass-cache"]
+    ## Windows Users ##
+
+    # default synced_folder method
     # web.vm.synced_folder './source', '/var/www/'
 
-    # NOTE!
-    ## This will get better in Vagrant 1.5 with intorduction of
-    ## Rsync based synching! So stay tuned!
-
+    ## SMB based mounts - WINDOWS Only!
+    ## http://docs.vagrantup.com/v2/synced-folders/smb.html
+    # web.vm.synced_folder "./source", "/var/www/", type: "smb"
   end
 
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "ansible/playbook.yml"
-    ansible.verbose = 'vv' #accepts 'v' to 'vvvv'
+    ansible.verbose = 'vvvv' #accepts 'v' to 'vvvv'
     ansible.sudo = 'true'
   end
 
