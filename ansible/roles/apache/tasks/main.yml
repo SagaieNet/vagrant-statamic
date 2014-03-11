@@ -34,3 +34,13 @@
     - headers
     - expires
     - filter
+
+- name: Check default apache user
+  shell: grep -c 'www-data' /etc/apache2/envvars
+  register: apacheuser_check
+  ignore_errors: yes
+
+- name: Change default apache user
+  shell: sed -i 's/www-data/vagrant/' /etc/apache2/envvars
+  when: apacheuser_check > 0
+  notify: restart apache
