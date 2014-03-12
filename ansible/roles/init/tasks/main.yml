@@ -15,11 +15,7 @@
   sudo: yes
   apt_repository: repo=ppa:ondrej/{{ php_ppa }}
 
-- name: Update apt
-  sudo: yes
-  apt: update_cache=yes
-
 - name: Install Extra Packages
   sudo: yes
-  apt: pkg={{ item }} state=latest
+  apt: pkg={{ item }} state=latest force=yes
   with_items: sys_packages

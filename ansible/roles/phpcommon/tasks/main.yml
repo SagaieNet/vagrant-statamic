@@ -1,4 +1,4 @@
 - name: Install PHP Packages
   sudo: yes
-  apt: pkg={{ item }} state=latest
+  apt: pkg={{ item }} state=latest force=yes
   with_items: php_packages
