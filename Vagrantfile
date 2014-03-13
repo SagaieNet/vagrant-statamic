@@ -28,13 +28,13 @@ Vagrant.configure("2") do |config|
 
   ## webserver - nginx - 1
   config.vm.define :web do |web|
-    web.vm.hostname = "web"
+    web.vm.hostname = "apache-statamic"
     # config.ssh.username = 'vagnrat1'
     # config.ssh.port = 22
 
     # set custom name to showup in Virtualbox
     web.vm.provider "virtualbox" do |vm|
-      vm.name = "web"
+      vm.name = "web1-apache"
     end
 
     ## http/https port mappings
