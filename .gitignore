@@ -49,3 +49,7 @@ atlassian-ide-plugin.xml
 *.log
 *.sql
 *.sqlite
+
+# Marketing           #
+#######################
+marketing
