@@ -51,7 +51,7 @@ Want top run `vagrant up` followed by the new hotness in `Vagrant 1.5` that is `
 
     ./vagrant-up.sh
 
-if you have any issues running it, try gicing it execution permissions first
+if you have any issues running it, try giving it execution permissions first
 
     chmod +x vagrant-up.sh
 
