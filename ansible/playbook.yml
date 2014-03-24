@@ -15,7 +15,7 @@
       - php5-gd
       - php5-mcrypt
       - libapache2-mod-php5
-    php_ppa: php5
+    php_ppa: ondrej/php5
     apache_vhosts:
       - {servername: "statamic.dev", server_alias: "project.dev statamic.10.0.1.100.xip.io", documentroot: "/var/www/statamic", serveradmin: "webmaster@localhost"}
   roles:
