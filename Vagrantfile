@@ -4,15 +4,20 @@
 box32      = 'precise32'
 box32_url  = 'http://files.vagrantup.com/precise32.box'
 
+ubuntu_1404 = "ubuntu/trusty64"
+
+
+VAGRANTFILE_API_VERSION = "2"
+
 # box64      = 'precise64'
 # box64_url  = 'http://files.vagrantup.com/precise64.box'
 
 # ssh_key    = '/Users/username/.ssh/yourkey.pub'
 
-Vagrant.configure("2") do |config|
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-  config.vm.box = box32
-  config.vm.box_url = box32_url
+  config.vm.box = ubuntu_1404
+  # config.vm.box_url = box32_url
   #config.ssh.private_key_path = ssh_key
   ## setup private network for use by vagrant machines
   ##  10.0.1.1 is reserved for the router
