@@ -7,7 +7,7 @@ A happy union of [Vagrant](http://www.vagrantup.com/) and [Statamic CMS](http://
 ## Works on
 
 + ![Vagrant 1.6.3](http://b.repl.ca/v1/Vagrant-1.6.3-green.png)
-+ ![Statamic 1.8](http://b.repl.ca/v1/Statamic-1.8-green.png)
++ ![Statamic 1.7-1.8](http://b.repl.ca/v1/Statamic-1.7--1.8-green.png)
 
 ## Requirements
 
@@ -15,6 +15,7 @@ Currently working and tested on OSX only but should work just fine on Linux/BSD 
 
 + [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
 + [Vagrant](http://www.vagrantup.com/downloads.html)
++ [Ansible](http://docs.ansible.com/intro_installation.html)
 + A copy of [Statamic](http://statamic.com/)
 
 ## How?
@@ -30,6 +31,12 @@ You can get it [here](https://www.virtualbox.org/wiki/Downloads).
 You can get it [here](http://www.vagrantup.com/downloads.html).
 
 Confirm that `Vagrant` is good to go with `$ which vagrant` which should give you something like `/usr/bin/vagrant` in the terminal window.
+
+### Ansible
+
+You can get it [here](http://docs.ansible.com/intro_installation.html).
+
+Confirm that `Ansible` is good to go with `$ which ansible` which should give you something like `/usr/local/bin/ansible` in the terminal window.
 
 #### Get a copy of Statamic
 
